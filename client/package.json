@@ -9,7 +9,10 @@
     "preview": "vite preview",
     "start": "serve -s dist",
     "build": "vite build",
-    "heroku-postbuild": "npm install && npm run build"
+  },
+  "engines": {
+    "node": "20.x",
+    "npm": "10.x"
   },
   "dependencies": {
     "react": "^19.1.0",
