@@ -9,7 +9,6 @@ CORS(app, resources={
     r"/api/frontend/*": {"origins": "http://localhost:5173"}
 })
 
-print('FRONTEND_ORIGIN',FRONTEND_ORIGIN)
 
 DISCORD_SECRET_TOKEN = os.environ.get("DISCORD_SECRET_TOKEN", "dev-secret")
 
@@ -18,6 +17,11 @@ frontend = Blueprint('frontend', __name__)
 @frontend.route("/main", methods=["GET"])
 def frontend_secret():
     return jsonify({"message": "Only frontend can access this (via CORS)"})
+
+@app.route("/api/test", methods=["GET"])
+def front_route_origin():
+    print(FRONTEND_ORIGIN)
+    return jsonify({"message": "Hello from Flask!"})
 
 @app.route("/api/discord/submit", methods=["POST"])
 def discord_submit():
