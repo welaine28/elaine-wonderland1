@@ -2,13 +2,10 @@ import os
 from flask import Flask, request, jsonify, abort, Blueprint
 from flask_cors import CORS
 
-FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN", "http://localhost:5173")
 
 app = Flask(__name__)
-CORS(app, resources={
-    r"/api/frontend/*": {"origins": "http://localhost:5173"}
-})
 
+CORS(app, resources={r"/api/*": {"origins": os.getenv("FRONTEND_ORIGIN", "http://localhost:5173")}})
 
 DISCORD_SECRET_TOKEN = os.environ.get("DISCORD_SECRET_TOKEN", "dev-secret")
 
@@ -20,7 +17,7 @@ def frontend_secret():
 
 @app.route("/api/test", methods=["GET"])
 def front_route_origin():
-    print(FRONTEND_ORIGIN)
+    print(os.getenv("FRONTEND_ORIGIN", "http://localhost:5173"))
     return jsonify({"message": "Hello from Flask!"})
 
 @app.route("/api/discord/submit", methods=["POST"])
