@@ -1,12 +1,7 @@
 nname: Deploy Flask Server to Heroku
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'server/**'
-      - '.github/workflows/deploy-server.yml'
+  workflow_dispatch:
 
 jobs:
   deploy-server:
