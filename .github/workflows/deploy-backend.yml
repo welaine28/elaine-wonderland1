@@ -1,20 +1,24 @@
-name: Deploy Backend to Heroku
+nname: Deploy Flask Server to Heroku
 
 on:
   push:
+    branches:
+      - main
     paths:
       - 'server/**'
-      - '.github/workflows/deploy-backend.yml'
+      - '.github/workflows/deploy-server.yml'
 
 jobs:
-  deploy:
+  deploy-server:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Deploy server/ to Heroku
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         run: |
-          git remote add heroku https://heroku:${HEROKU_API_KEY}@git.heroku.com/elaine-wonderland-server.git
+          git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/elaine-wonderland-server.git
           git subtree push --prefix server heroku main
