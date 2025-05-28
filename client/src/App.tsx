@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
+console.log("API URL:", import.meta.env.VITE_API_URL);
+
 function App() {
   return (
     <BrowserRouter>
