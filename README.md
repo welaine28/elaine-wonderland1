@@ -1,6 +1,7 @@
 # elaine-wonderland1
 
 ## Create a new app within monorepo
+make multiple apps within a monorepo but deployed to separate heroku apps
 
 
 ### Setup for backend (python in server/)
