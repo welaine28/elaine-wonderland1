@@ -14,7 +14,7 @@ export const fetchMessage = async () => {
 
   export const fetchTest = async () => {
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/test`);
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/frontend/test`);
       console.log(res);
       return res.json();
     } catch (err) {
