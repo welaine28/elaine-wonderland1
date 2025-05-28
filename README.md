@@ -1,7 +1,9 @@
 # elaine-wonderland1
 
+## Create a new app within monorepo
 
-## Setup for backend (python in server/)
+
+### Setup for backend (python in server/)
 
 ```
 # Create the backend Heroku app
@@ -21,7 +23,7 @@ heroku config:set APP_BASE=server -a elaine-wonderland-server
 ```
 
 
-Setup for Frontend (React in client/)
+### Setup for Frontend (React in client/)
 
 ```
 # Create the frontend Heroku app
