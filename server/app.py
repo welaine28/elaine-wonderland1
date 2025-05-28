@@ -5,7 +5,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 
-CORS(app, resources={r"/api/*": {"origins": os.getenv("FRONTEND_ORIGIN", "http://localhost:5173")}})
+CORS(app, resources={r"/api/frontend/*": {"origins": os.getenv("FRONTEND_ORIGIN", "http://localhost:5173")}})
 
 DISCORD_SECRET_TOKEN = os.environ.get("DISCORD_SECRET_TOKEN", "dev-secret")
 
@@ -15,7 +15,7 @@ frontend = Blueprint('frontend', __name__)
 def frontend_secret():
     return jsonify({"message": "Only frontend can access this (via CORS)"})
 
-@app.route("/api/test", methods=["GET"])
+@frontend.route("/test", methods=["GET"])
 def front_route_origin():
     print(os.getenv("FRONTEND_ORIGIN", "http://localhost:5173"))
     return jsonify({"message": "Hello from Flask!"})
