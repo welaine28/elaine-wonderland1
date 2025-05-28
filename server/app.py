@@ -30,6 +30,7 @@ def discord_submit():
 def serve_react_or_static(path):
     return jsonify({"error": "Not found"}), 404
 
+app.register_blueprint(frontend, url_prefix="/api/frontend")
+
 if __name__ == "__main__":
-    app.register_blueprint(frontend, url_prefix="/api/frontend")
     app.run(debug=True)
