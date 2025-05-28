@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, jsonify, abort, send_from_directory, Blueprint
+from flask import Flask, request, jsonify, abort, Blueprint
 from flask_cors import CORS
 
 FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN", "http://localhost:5173")
