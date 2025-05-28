@@ -1,0 +1,24 @@
+name: Deploy React Client to Heroku
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'client/**'
+      - '.github/workflows/deploy-client.yml'
+
+jobs:
+  deploy-client:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to Heroku Client App
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: |
+          git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/elaine-wonderland-client.git
+          git push heroku main --force
