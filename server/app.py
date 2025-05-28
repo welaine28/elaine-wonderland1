@@ -9,6 +9,8 @@ CORS(app, resources={
     r"/api/frontend/*": {"origins": "http://localhost:5173"}
 })
 
+print('FRONTEND_ORIGIN',FRONTEND_ORIGIN)
+
 DISCORD_SECRET_TOKEN = os.environ.get("DISCORD_SECRET_TOKEN", "dev-secret")
 
 frontend = Blueprint('frontend', __name__)
