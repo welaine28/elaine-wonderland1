@@ -22,3 +22,15 @@ export const fetchMessage = async () => {
       throw err;
     }
   };
+
+
+  export const fetchBenchmark = async () => {
+    try {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/frontend/benchmark`);
+      console.log(res);
+      return res.json();
+    } catch (err) {
+      console.error("Fetch failed fetchBenchmark:", err);
+      throw err;
+    }
+  };
