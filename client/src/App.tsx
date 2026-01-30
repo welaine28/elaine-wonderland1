@@ -1,11 +1,11 @@
-import './App.css';
+import "./App.css";
 
 // client/src/App.tsx
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
-import DemoBenchmark from './pages/DemoBenchmark';
+import DemoBenchmark from "./pages/DemoBenchmark";
 
 function App() {
   return (
