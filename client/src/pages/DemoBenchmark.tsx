@@ -140,7 +140,7 @@ function makeGroupedBarOption(data: any) {
     },
 
     legend: {
-      top: 24,
+      top: 40,
     },
 
     tooltip: {
