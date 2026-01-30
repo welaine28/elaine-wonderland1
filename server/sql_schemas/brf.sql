@@ -47,7 +47,7 @@ rows_to_insert AS (
       +
       (20 + random() * 500)
     )::numeric AS model_score,
-    800::numeric AS baseline_score
+    4213::numeric AS baseline_score
   FROM agents a
   CROSS JOIN (VALUES (0), (1), (2)) AS g(week_idx)
 )
@@ -88,6 +88,6 @@ SELECT
     'week_' || r.week_idx
   ]::text[] AS labels,
   -- speedup = model_score / baseline_score
-  to_char((r.model_score / r.baseline_score), 'FM9990.000') AS benchmark_result
+  to_char((r.baseline_score/r.model_score), 'FM9990.000') AS benchmark_result
 FROM rows_to_insert r
 ORDER BY r.agent_name, r.week_idx;

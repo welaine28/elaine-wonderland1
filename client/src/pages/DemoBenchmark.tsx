@@ -2,6 +2,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { fetchBenchmark } from "../api/api";
 import ReactECharts from "echarts-for-react";
+import { SeriesExpandableTable } from "./components/list";
+import { Box } from "@mui/material";
 
 export default function DemoBenchmark() {
   const [data, setData] = useState<any>({});
@@ -69,6 +71,9 @@ export default function DemoBenchmark() {
       />
       <GroupedBarChart data={data} />
       <br />
+      <Box sx={{ p: 2 }}>
+        <SeriesExpandableTable series={data.series} title="Benchmark series" />
+      </Box>
       <DebugJson data={data} />
     </div>
   );

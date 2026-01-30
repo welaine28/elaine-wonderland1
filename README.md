@@ -44,3 +44,15 @@ heroku config:set APP_BASE=client -a elaine-wonderland-client
 
 heroku config:set NODE_ENV=production -a elaine-wonderland-client
 ```
+
+
+start the server locally
+```
+# backend and frontend
+python app.py
+npm run dev
+```
+access the db
+```
+heroku pg:psql --app elaine-wonderland-server
+```
