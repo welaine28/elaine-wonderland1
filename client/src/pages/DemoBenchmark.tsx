@@ -1,5 +1,5 @@
 // client/src/pages/About.tsx
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { fetchBenchmark } from "../api/api";
 import { SeriesExpandableTable } from "./components/list";
 import { Box } from "@mui/material";
