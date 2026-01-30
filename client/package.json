@@ -16,6 +16,10 @@
     "npm": "10.x"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.3.7",
+    "@mui/material": "^7.3.7",
     "echarts": "^6.0.0",
     "echarts-for-react": "^3.0.6",
     "react": "^19.1.0",
