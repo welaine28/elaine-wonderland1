@@ -313,8 +313,8 @@ function SeriesRowExpandable({ row }: { row: SeriesRow }) {
             <Box sx={{ py: 1.5 }}>
               <Stack spacing={1}>
                 <Stack direction="row" spacing={1} alignItems="center">
-                  <Typography variant="subtitle2">Points</Typography>
-                  <Chip size="small" label={`${row.points.length} items`} />
+                  <Typography variant="subtitle2">Histories</Typography>
+                  <Chip size="small" label={`${row.points.length} runs`} />
                 </Stack>
                 <Divider />
                 <SeriesPointsTable points={row.points} />
@@ -333,8 +333,8 @@ export function SeriesExpandableTable({ series, title }: Props) {
       <Box sx={{ p: 2 }}>
         <Typography variant="h6">{title ?? "Series"}</Typography>
         <Typography variant="body2" color="text.secondary">
-          Each series is a row. Expand to see per-point subrows with labels +
-          pretty metadata.
+          Show the latest benchmark result per agent+model, Expand to see
+          per-run result with labels + pretty metadata.
         </Typography>
       </Box>
 
@@ -346,7 +346,7 @@ export function SeriesExpandableTable({ series, title }: Props) {
             <TableCell>Metric</TableCell>
             <TableCell width={90}>Unit</TableCell>
             <TableCell align="right" width={90}>
-              Points
+              Results count
             </TableCell>
             <TableCell align="right" width={140}>
               Avg speedup
