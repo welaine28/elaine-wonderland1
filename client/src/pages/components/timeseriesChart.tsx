@@ -48,13 +48,8 @@ function makeTimeSeriesChartOption(data: any) {
   return option;
 }
 
-export default function TimeSeriesChart(data: any) {
-  if (!data.series) {
-    return;
-  }
-
-  console.log(data);
-
+export default function TimeSeriesChart({ data }: { data: any }) {
+  console.log("TimeSeriesChart",data);
   const option = useMemo(() => makeTimeSeriesChartOption(data), [data]);
   return (
     <ReactECharts
